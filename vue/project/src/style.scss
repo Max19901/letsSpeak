@@ -1,0 +1,123 @@
+@import "global";
+
+* {
+  font-family: 'YandexM';
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'RobotoL';
+  src: url("./assets/fonts/Roboto/RobotoCondensed-LightItalic.ttf");
+}
+@font-face {
+  font-family: 'RobotoR';
+  src: url('./assets/fonts/Roboto/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+  font-family: 'PoppinsR';
+  src: url('./assets/fonts/Poppins/Poppins-Regular.otf');
+}
+@font-face {
+  font-family: 'PoppinsL';
+  src: url('./assets/fonts/Poppins/Poppins-Light.otf');
+}
+
+@font-face {
+  font-family: 'YandexR';
+  src: url('./assets/fonts/PTSans/PTC55f.ttf');
+}
+@font-face {
+  font-family: 'YandexM';
+  src: url('./assets/fonts/PTSans/PTC75f.ttf');
+}
+//Some Global Styles
+
+a {
+  text-decoration: none;
+  color: #333;
+  &:hover {
+    text-decoration: none;
+  }
+}
+#app {
+  position: relative;
+}
+.app_header {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+.agile {
+  &__dots {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    bottom: 60px
+  }
+
+  &__dot {
+    margin: 0 5px;
+    button {
+      background-color: transparent;
+      border: 1px solid #fff;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+    &--current {
+      button {
+        background-color: $blue;
+      }
+    }
+  }
+
+  &__arrow {
+    height: 100%;
+    top: 0;
+    width: 80px;
+    display: none;
+  }
+}
+
+.title-block {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  h2 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: $black;
+    font-family: 'YandexM';
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 4px;
+      background-color: $red;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -35px;
+    }
+  }
+  &.white{
+    h2 {
+      color: $white;
+      padding-top: 70px;
+    }
+  }
+}
