@@ -1,10 +1,12 @@
 <template>
   <div class="header">
-    <div class="container">
-      <div class="row">
-        <app-logo></app-logo>
-        <app-navigation></app-navigation>
-        <app-phone></app-phone>
+    <div class="header-wrap">
+      <div class="container">
+        <div class="row">
+          <app-logo></app-logo>
+          <app-navigation></app-navigation>
+          <app-enter></app-enter>
+        </div>
       </div>
     </div>
   </div>
@@ -14,23 +16,25 @@
 
   import Logo from './Head/Logo.vue';
   import Navigation from './Head/Navigation.vue';
-  import Phone from './Head/Phone.vue';
+  import Enter from './Head/Enter.vue';
 
   export default {
     name: "Header",
     components: {
       appLogo: Logo,
       appNavigation: Navigation,
-      appPhone: Phone
+      appEnter: Enter
     }
   }
 </script>
 
 <style scoped lang="scss">
-  .header {
+  .header-wrap {
+    width: 100%;
+    height: 100px;
     padding: 10px 0;
-    background: rgba(17,36,78,.9);
+    background: rgba(17, 36, 78, 1);
     position: fixed;
-    box-shadow: 0px 9px 28px 0px rgba(0,0,0,0.26);
+    box-shadow: 0px 9px 28px 0px rgba(0, 0, 0, 0.26);
   }
 </style>

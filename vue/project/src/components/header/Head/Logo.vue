@@ -1,8 +1,8 @@
 <template>
   <div class="logo col-2">
-    <a href="">
+    <router-link tag="a" :to="{name: 'Home'}">
       <img src="../../../assets/images/libery_1.png" alt="">
-    </a>
+    </router-link>
   </div>
 </template>
 

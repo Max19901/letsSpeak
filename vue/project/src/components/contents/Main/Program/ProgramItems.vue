@@ -7,52 +7,14 @@
         distinctio?</p>
     </div>
     <div class="program-items col col-5">
-      <div class="program-items__item">
-        <img class="item-bg" src="../../../../assets/images/3.jpg" alt="">
+      <div class="program-items__item" v-for="program in programs">
+        <img class="item-bg" v-bind:src="program.bgImage" alt="">
         <div class="item-icon">
-          <img src="../../../../assets/images/icon/004-puzzle-pieces.png" alt="">
+          <!--<img v-bind:src="program.icon" alt="">-->
         </div>
         <div class="item-wrap">
-          <h3>Для детей</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem blanditiis dolor eos excepturi
-            facilis fugiat impedit ipsa, molestiae nam, nobis, odit placeat quae reiciendis rerum? Consequuntur delectus
-            iste ut!</p>
-        </div>
-      </div>
-      <div class="program-items__item">
-        <img class="item-bg" src="../../../../assets/images/6.jpg" alt="">
-        <div class="item-icon">
-          <img src="../../../../assets/images/icon/004-puzzle-pieces.png" alt="">
-        </div>
-        <div class="item-wrap">
-          <h3>Английский с нуля</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem blanditiis dolor eos excepturi
-            facilis fugiat impedit ipsa, molestiae nam, nobis, odit placeat quae reiciendis rerum? Consequuntur delectus
-            iste ut!</p>
-        </div>
-      </div>
-      <div class="program-items__item">
-        <img class="item-bg" src="../../../../assets/images/4.jpg" alt="">
-        <div class="item-icon">
-          <img src="../../../../assets/images/icon/004-puzzle-pieces.png" alt="">
-        </div>
-        <div class="item-wrap">
-          <h3>Интесив</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem blanditiis dolor eos excepturi
-            facilis fugiat impedit ipsa, molestiae nam, nobis, odit placeat quae reiciendis rerum? Consequuntur delectus
-            iste ut!</p>
-        </div>
-      </div>
-      <div class="program-items__item">
-        <img class="item-bg" src="../../../../assets/images/1.jpg" alt="">
-        <div class="item-icon">
-          <img src="../../../../assets/images/icon/004-puzzle-pieces.png" alt="">
-        </div>
-        <div class="item-wrap">
-          <h3>Помощь в заданиях</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem blanditiis dolor eos excepturi
-            facilis fugiat impedit ipsa, molestiae nam, nobis, odit placeat quae reiciendis rerum? Consequuntur delectus
-            iste ut!</p>
+          <h3>{{ program.title }}</h3>
+          <p>{{ program.description }}</p>
         </div>
       </div>
     </div>
@@ -61,7 +23,38 @@
 
 <script>
   export default {
-    name: "ProgramItems"
+    name: "ProgramItems",
+    data() {
+      return {
+        programs: [
+          {
+            title: 'Для детей',
+            description: 'Срок обучения от 3 до 12 месяцев',
+            icon: '../../../src/assets/images/icon/004-puzzle-pieces.png',
+            bgImage: '../../../src/assets/images/3.jpg',
+            body: ''
+          },{
+            title: 'Английский с нуля',
+            description: 'Срок обучения от 6 до 12 месяцев',
+            icon: '../../../src/assets/images/icon/004-puzzle-pieces.png',
+            bgImage: '../../../src/assets/images/4.jpg',
+            body: ''
+          },{
+            title: 'Интесив',
+            description: 'Срок обучения от 2 до 6 месяцев',
+            icon: '../../../src/assets/images/icon/004-puzzle-pieces.png',
+            bgImage: '../../../src/assets/images/7.jpg',
+            body: ''
+          },{
+            title: 'Помощь в заданиях',
+            description: 'Разбор заданий',
+            icon: '../../../src/assets/images/icon/004-puzzle-pieces.png',
+            bgImage: '../../../src/assets/images/1.jpg',
+            body: ''
+          }
+        ]
+      }
+    }
   }
 </script>
 
@@ -91,6 +84,8 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      min-height: 200px;
+      transition: background .5s;
       .item-bg {
         position: absolute;
         width: 100%;
@@ -115,16 +110,19 @@
         width: 70%;
         h3 {
           text-align: right;
-          transform: translateY(120px);
+          transform: translateY(100px);
           transition: transform .5s;
         }
         p {
-          transform: translateY(200%);
+          transform: translateY(150px);
           opacity: 0;
           transition: .5s;
+          font-family: 'YandexR';
+          text-align: right;
         }
       }
       &:hover {
+        background: rgba(17, 36, 78, 0.8);
         .item-wrap {
           h3 {
             transform: translateY(0);

@@ -1,5 +1,5 @@
 <template>
-  <div class="program">
+  <div class="program" id="program">
     <div class="container-fluid">
       <div class="title-block white">
         <h2>Программа</h2>
@@ -13,7 +13,7 @@
   import Items from './ProgramItems';
 
   export default {
-    name: "MainAdvant",
+    name: "MainProgram",
     components: {
       appProgramItems: Items
     }
@@ -25,7 +25,7 @@
 
   .program {
     position: relative;
-    background-image: url('../../../../assets/images/7.jpg');
+    background-image: url('../../../../assets/images/6.jpg');
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -39,7 +39,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,.8);
+        background-color: rgba(0,0,0,.7);
         z-index: -1;
         top: 0;
         left: 0;

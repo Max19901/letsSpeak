@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <transition>
       <app-header class="app_header"></app-header>
-    </transition>
-    <app-main></app-main>
+      <router-view></router-view>
+      <app-footer></app-footer>
   </div>
 </template>
 
 <script>
   import Header from './components/header/Header.vue';
   import Main from './components/contents/Main/MainPage.vue';
+  import Footer from './components/footer/Footer.vue';
 
   export default {
     data() {
@@ -19,7 +19,8 @@
     },
     components: {
       appHeader: Header,
-      appMain: Main
+      appMain: Main,
+      appFooter: Footer
     }
   }
 </script>

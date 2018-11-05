@@ -61,35 +61,60 @@ a {
     left: 50%;
     transform: translateX(-50%);
     z-index: 4;
-    bottom: 60px
+    bottom: -30px;
   }
 
   &__dot {
     margin: 0 5px;
     button {
       background-color: transparent;
-      border: 1px solid #fff;
+      border: 1px solid $blue;
       width: 15px;
       height: 15px;
       border-radius: 50%;
+      transition: .5s;
 
       &:hover {
-        background-color: #fff;
+        background-color: rgba($red, .6);
       }
     }
 
     &--current {
       button {
-        background-color: $blue;
+        background-color: $red;
       }
     }
   }
 
   &__arrow {
     height: 100%;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 80px;
-    display: none;
+    display: block;
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    &--prev {
+      left: 0;
+    }
+    &--next {
+      right: 0;
+    }
+    svg {
+      height: 30px;
+      path {
+        fill: #888;
+        height: 20px;
+        transition-duration: .3s;
+      }
+    }
+    &:hover {
+      svg path {
+        fill: #333;
+      }
+    }
   }
 }
 
@@ -118,6 +143,55 @@ a {
     h2 {
       color: $white;
       padding-top: 70px;
+    }
+  }
+}
+
+.button {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 15px 35px;
+  border: 1px solid $greyLight;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  color: $white;
+  transition: .4s;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $red;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: 0;
+    transition: transform .3s;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    z-index: -1;
+    transition: transform .3s;
+  }
+  &:hover {
+    color: $white;
+    &:after {
+      transform: translateY(-100%);
+      transition-delay: 0.175s;
+    }
+    &:before {
+      transform: translateY(0);
+      transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
     }
   }
 }

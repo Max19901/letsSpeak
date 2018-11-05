@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" id="about">
     <div class="container">
       <div class="title-block">
         <h2>Преимущества</h2>
@@ -29,14 +29,19 @@
     padding-top: 70px;
     padding-bottom: 70px;;
     position: relative;
+    background-color: $greyLight;
+    z-index: 0;
     &:after {
       content: '';
       position: absolute;
-      width: 50%;
+      width: 100%;
       height: 100%;
-      top: 0;
-      right: 0;
-      background-color: $greyLight;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background-color: rgba($red, .5);
+      -webkit-clip-path: polygon(50% 69%, 0% 100%, 100% 100%);
+      clip-path: polygon(50% 69%, 0% 100%, 100% 100%);
       z-index: -1;
     }
   }

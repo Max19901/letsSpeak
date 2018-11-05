@@ -1,32 +1,65 @@
 <template>
-    <div class="navigation col col-8">
-      <ul>
-        <li class="navigation-link" v-for="item in navMenu">
-          <a href="">
+  <div class="navigation col col-8">
+    <ul>
+      <router-link tag="li" class="navigation-link"
+                   :key="index"
+                   v-for="(item, index) in navMenu"
+                   :to="item.link">
+        <a>
             <span>
-              {{ item.name }}
+              {{ item.title }}
             </span>
-          </a>
-        </li>
-      </ul>
-    </div>
+        </a>
+      </router-link>
+    </ul>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "Navigation",
-        data() {
-          return {
-            navMenu: [
-              {name: 'Преимущества'},
-              {name: 'Пройти тест английского' },
-              {name: 'Программа'},
-              {name: 'Отзывы'},
-              {name: 'Контакты'}
-            ]
+  export default {
+    name: "Navigation",
+    data() {
+      return {
+        navMenu: [
+          {
+            title: 'Преимущества',
+            link: {
+              name: 'Home',
+              hash: '#about'
+            }
+          },
+          {
+            title: 'Программа',
+            link: {
+              name: 'Home',
+              hash: '#program'
+            }
+          },
+          {
+            title: 'Преподователи',
+            link: {
+              name: 'Home',
+              hash: '#teachers'
+            }
+          },
+          {
+            title: 'Отзывы',
+            link: {
+              name: 'Home',
+              hash: '#feedback'
+            }
+          },
+          {
+            title: 'Контакты',
+            link: {
+              name: 'Home',
+              hash: '#footer'
+            }
           }
-        }
+        ]
+      }
     }
+  }
 </script>
 
 <style scoped lang="scss">
@@ -55,6 +88,7 @@
           color: #fff;
           display: block;
           overflow: hidden;
+          font-family: 'YandexR';
           &:before {
             content: '';
             width: 100%;
@@ -64,29 +98,29 @@
             left: 0;
             background: $blue;
             z-index: 2;
-            transform: translate3d(-100%,0,0) translate3d(-1px,0,0);
+            transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
             transition: transform 0.7s;
-            transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+            transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
           }
           &:after {
             content: '';
             position: absolute;
             width: 100%;
-            height: 4px;
+            height: 10px;
             background: $red;
-            top: calc(50% - 2px);
-            transform: translate3d(-100%,0,0) translate3d(-1px,0,0);
+            top: calc(60% - 2px);
+            transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
             left: 0;
-            z-index: 1;
+            z-index: -1;
             transition: transform 0.7s;
-            transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+            transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
           }
           &:hover {
             &:before {
-              transform: translate3d(100%,0,0) translate3d(1px,0,0);
+              transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
             }
             &:after {
-              transform: translate3d(0,0,0);
+              transform: translate3d(0, 0, 0);
             }
           }
         }

@@ -99,8 +99,8 @@
       left: 0;
       width: 100%;
       height: 0;
-      border-left: 1px solid $grey;
-      border-right: 1px solid $grey;
+      border-left: 1px solid $black;
+      border-right: 1px solid $black;
       transition: height .5s;
     }
     &:before {
@@ -111,8 +111,8 @@
       left: 50%;
       width: 0;
       height: 100%;
-      border-top: 1px solid $grey;
-      border-bottom: 1px solid $grey;
+      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
       transition: width .5s;
     }
     &:hover {
