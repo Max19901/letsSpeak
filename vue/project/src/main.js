@@ -18,9 +18,6 @@ const router = new VueRouter({
       VueScrollTo.scrollTo(to.hash, 800);
       return {selector: to.hash}
 
-    }
-    if (savedPosition) {
-      return savedPosition
     } else {
       return {x: 0, y: 0}
     }

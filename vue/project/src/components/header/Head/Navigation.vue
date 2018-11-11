@@ -85,9 +85,10 @@
         span {
           position: relative;
           letter-spacing: 1px;
-          color: #fff;
+          color: $black;
           display: block;
           overflow: hidden;
+          transition: 0.7s;
           font-family: 'YandexR';
           &:before {
             content: '';
@@ -106,9 +107,9 @@
             content: '';
             position: absolute;
             width: 100%;
-            height: 10px;
+            height: 100%;
             background: $red;
-            top: calc(60% - 2px);
+            top: 0;
             transform: translate3d(-100%, 0, 0) translate3d(-1px, 0, 0);
             left: 0;
             z-index: -1;
@@ -116,6 +117,7 @@
             transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
           }
           &:hover {
+            color: #fff;
             &:before {
               transform: translate3d(100%, 0, 0) translate3d(1px, 0, 0);
             }

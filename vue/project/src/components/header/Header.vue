@@ -33,7 +33,7 @@
     width: 100%;
     height: 100px;
     padding: 10px 0;
-    background: rgba(17, 36, 78, 1);
+    background: #fafafa;
     position: fixed;
     box-shadow: 0px 9px 28px 0px rgba(0, 0, 0, 0.26);
   }

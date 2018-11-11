@@ -118,6 +118,15 @@ a {
   }
 }
 
+.no-padding {
+  padding: 0;
+}
+
+input {
+  border: none;
+  background: none;
+}
+
 .title-block {
   text-align: center;
   padding-top: 50px;
@@ -159,6 +168,7 @@ a {
   overflow: hidden;
   color: $white;
   transition: .4s;
+  background-color: $red;
   &:after {
     content: '';
     position: absolute;
@@ -168,7 +178,7 @@ a {
     top: 0;
     left: 0;
     transform: translateY(100%);
-    z-index: 0;
+    z-index: -1;
     transition: transform .3s;
   }
   &:before {

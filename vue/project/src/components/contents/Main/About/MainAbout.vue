@@ -6,15 +6,19 @@
       </div>
       <app-about-items></app-about-items>
     </div>
+    <app-banner></app-banner>
   </div>
 </template>
 
 <script>
   import AboutItems from './AboutItems.vue';
+  import AboutBanner from './AboutBanner.vue';
+
   export default {
     name: "MainAbout",
     components: {
-      appAboutItems: AboutItems
+      appAboutItems: AboutItems,
+      appBanner: AboutBanner
     },
     data() {
       return {}
@@ -27,22 +31,11 @@
 
   .about {
     padding-top: 70px;
-    padding-bottom: 70px;;
     position: relative;
     background-color: $greyLight;
     z-index: 0;
-    &:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      background-color: rgba($red, .5);
-      -webkit-clip-path: polygon(50% 69%, 0% 100%, 100% 100%);
-      clip-path: polygon(50% 69%, 0% 100%, 100% 100%);
-      z-index: -1;
+    .container {
+      padding-bottom: 70px;
     }
   }
 </style>

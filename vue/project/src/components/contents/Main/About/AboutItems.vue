@@ -1,53 +1,80 @@
 <template>
-  <div class="row">
-    <div class="about-items col col-3">
-      <div class="about-item">
-        <h4>Удобный график</h4>
-        <div class="about-item__icon">
-          <img src="./../../../../assets/images/icon/014-network.png" alt="">
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aspernatur deserunt dolorem, enim
-          eum ex explicabo fuga ipsam, laborum magni nihil obcaecati quae quibusdam quidem reprehenderit vero voluptas
-          voluptatibus.</p>
-      </div>
+  <div class="row about-items">
+    <div class=" col col-3">
+      <ul class="about-item">
+        <li
+          @click="selectedItem(item)"
+          v-for="(item, $index) in aboutData"
+          :class="{active:item.id == selected}">
+            <span>0{{ $index+1 }}/</span>
+            <p>{{ item.name }}</p>
+        </li>
+      </ul>
     </div>
-    <div class="about-items col col-3">
-      <div class="about-item">
-        <h4>Уникальный подход</h4>
-        <div class="about-item__icon">
-          <img src="./../../../../assets/images/icon/002-world-map.png" alt="">
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolores doloribus, et exercitationem id
-          laborum magnam molestias pariatur perferendis placeat porro quam rem saepe sequi similique sint tempora. Cum,
-          porro.</p>
-      </div>
-    </div>
-    <div class="about-items col col-3">
-      <div class="about-item">
-        <h4>Гарантия результата</h4>
-        <div class="about-item__icon">
-          <img src="./../../../../assets/images/icon/011-computer.png" alt="">
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt dolorum earum eius, error et ex id
-          necessitatibus, nihil odit pariatur provident quaerat quia rem sit totam unde, voluptates voluptatibus!</p>
-      </div>
-    </div>
-    <div class="about-items col col-3">
-      <div class="about-item">
-        <h4>Разговорная практика</h4>
-        <div class="about-item__icon">
-          <img src="./../../../../assets/images/icon/010-creative.png" alt="">
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt dolorum earum eius, error et ex id
-          necessitatibus, nihil odit pariatur provident quaerat quia rem sit totam unde, voluptates voluptatibus!</p>
-      </div>
+    <div class="about-item-description col col-7">
+      <h2 class="about-item__title">{{ selectItemDescription.title }}</h2>
+      <div class="about-item__text">{{ selectItemDescription.text }}</div>
+      <p class="about-item__desc">{{ selectItemDescription.textDesc }}</p>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "AboutItems"
+    name: "AboutItems",
+    data() {
+      return {
+        aboutData: [
+          {
+            id: this.selected,
+            name: 'Удобный график',
+            description: {
+              title: 'Удобный график',
+              text: 'Главное в обучении то, что ВЫ сами определяете время когда вам удобно провести урок. Достаточно выбрать число и свободное время, на этом все',
+              textDesc: 'Вам ненужно тратить время на то, чтобы добраться на урок и на дорогу домой'
+            }
+          },
+          {
+            id: 2,
+            name: 'Уникальный подход',
+            description: {
+              title: 'Уникальный подход',
+              text: 'Мы ориентируемся на цели ученика. Одному мы помогаем интенсивно выучить язык. Другого готовим к поступлению в вузы или к сдачам экзаменов. Третий просто обучается в удовольствие языку в нашей школе.',
+              textDesc: 'Это и есть уникальный подход: готовность вместе достигать именно ваших целей.'
+            }
+          },
+          {
+            id: 3,
+            name: 'Гарантия результата',
+            description: {
+              title: 'Гарантия результата',
+              text: 'Образование и большой опыт преподавания — необходимые условия для педагога, работающего в Staccato. Для нас это действительно важно.',
+              textDesc: 'Мы в курсе всех актуальных и эффективных методик обучения, потому что преподаватели «Стаккато» регулярно участвуют в профильных мастер-классах и перенимают опыт педагогов с мировых именем.'
+            }
+          },
+          {
+            id: 4,
+            name: 'Разговорная практика',
+            description: {
+              title: 'Разговорная практика',
+              text: 'Более 80% людей, приходящих к в Staccato, никогда прежде не занимались музыкой. «От нуля и до профи» — так можно охарактеризовать наш подход, ведь мы вместе с вами пройдем весь путь обучения с самого начала до любителя. А потом и до профессионала.',
+              textDesc: 'Обучение музыке — это сложная и тонкая работа. Под руководством опытного наставника вы действительно можете добиться хороших результатов. Самое важное, чтобы вы находили время для регулярных занятий в школе и дома.'
+            }
+          }
+        ],
+        selectItemDescription: 'Hello',
+        selected: undefined,
+      }
+    },
+    methods: {
+      selectedItem(item) {
+        this.selected = item.id;
+        this.selectItemDescription = item.description;
+      }
+    },
+    created(){
+      this.selectItemDescription = this.aboutData[0].description;
+    }
   }
 </script>
 
@@ -55,73 +82,57 @@
   @import '../../../../global';
 
   .about-items {
-    display: flex;
+
   }
+
   .about-item {
-    text-align: center;
-    padding: 15px;
-    position: relative;
-    h4 {
-      position: relative;
-      display: inline-block;
-      font-size: 1.2rem;
-      &:after {
-        content: '';
-        position: absolute;
-        width: 50%;
-        height: 4px;
-        background: $blue;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -30px;
-      }
-    }
-    &__icon {
+    padding: 0;
+    width: 100%;
+    li {
+      list-style-type: none;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      border-right: 1px solid $grey;
       padding: 10px 0;
-      text-align: center;
-      margin-top: 30px;
-      img {
-        width: 55px;
+      span {
+        font-size: .8rem;
+        margin-right: 20px;
+        color: #c2c2c2;
+        font-weight: 500;
+        font-family: 'YandexR';
+      }
+      p {
+        font-size: 1rem;
+        font-family: 'YandexR';
+        margin: 0;
+        font-weight: 500;
+      }
+      &.active {
+        border-right: 1px solid $red;
+        span, p {
+          font-weight: 700;
+        }
       }
     }
-    p {
-      padding-top: 15px;
+  }
+
+  .about-item-description {
+    .about-item__title {
+      margin-bottom: 30px;
+    }
+    .about-item__text {
+      background: rgba($red, .6);
+      display: inline;
+      line-height: 1.8;
+      font-weight: 900;
+      font-size: 1.4rem;
+    }
+    .about-item__desc {
+      line-height: 1.4;
       font-family: 'YandexR';
-      font-size: 0.9rem;
-      line-height: 20px;
-      letter-spacing: 0.5px;
-    }
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      width: 100%;
-      height: 0;
-      border-left: 1px solid $black;
-      border-right: 1px solid $black;
-      transition: height .5s;
-    }
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      transform: translateX(-50%);
-      left: 50%;
-      width: 0;
-      height: 100%;
-      border-top: 1px solid $black;
-      border-bottom: 1px solid $black;
-      transition: width .5s;
-    }
-    &:hover {
-      &:after {
-        height: 100%;
-      }
-      &:before {
-        width: 100%;
-      }
+      font-size: 1.2rem;
+      margin-top: 30px;
     }
   }
 </style>
