@@ -19,7 +19,7 @@
                  placeholder="Пароль"
                  type="text">
         </div>
-        <button class="button">Войти</button>
+        <button @click='loginEnter' class="button">Войти</button>
       </div>
       <div class="info-reset">
         <h3></h3>
@@ -29,8 +29,22 @@
 </template>
 
 <script>
+  import {lApplication} from "./../../../../logic/lApplication";
+  const AppT = new lApplication();
+
   export default {
-    name: "Enter"
+    name: "Enter",
+    data() {
+      return {
+        login: '',
+        pass: ''
+      }
+    },
+    methods: {
+      loginEnter (login, pass) {
+        AppT.login();
+      }
+    }
   }
 </script>
 

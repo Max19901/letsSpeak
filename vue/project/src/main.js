@@ -4,8 +4,14 @@ import App from './App.vue'
 import VueAgile from 'vue-agile'
 import VueScrollTo from 'vue-scrollto';
 import {routes} from "./routes";
+//import {AppCraft} from "./logic/lAdmin";
+
 
 import './style.scss'
+
+// const AppT = new AppCraft();
+//
+// window.my = AppT;
 
 Vue.use(VueRouter);
 Vue.use(VueAgile);
