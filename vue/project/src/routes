@@ -9,8 +9,7 @@ const guard = function(to, from, next) {
   //if (to.name == "Register") {
   if (!AppT.isUserAuth()) {
     console.log("access denied");
-    alert('ERRROROROROOR');
-    return false;
+    window.location.href = "/";
   } else {
     console.log("access ok");
     next();

@@ -10,7 +10,7 @@ export class lApplication {
   }
   isUserAuth () {
     console.log('ddsd user check auth');
-    return true;
+    return false;
   }
 }
 
