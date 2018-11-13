@@ -8,6 +8,10 @@ export class lApplication {
   login () {
     console.log('Login');
   }
+  isUserAuth () {
+    console.log('ddsd user check auth');
+    return true;
+  }
 }
 
 

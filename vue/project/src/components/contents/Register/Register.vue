@@ -12,12 +12,14 @@
 <script>
   import RegisterForm from './components/RegisterForm.vue';
 
+
   export default {
     name: "Register",
     components: {
       appForm: RegisterForm
     }
   }
+
 </script>
 
 <style scoped lang="scss">
