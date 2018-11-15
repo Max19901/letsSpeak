@@ -21,7 +21,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../../../../global";
+  @import "../../../../style/global";
 
   .teacher {
     &-photo {

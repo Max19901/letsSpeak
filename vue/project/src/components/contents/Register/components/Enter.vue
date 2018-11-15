@@ -29,20 +29,22 @@
 </template>
 
 <script>
-  import {lApplication} from "./../../../../logic/lApplication";
-  const AppT = new lApplication();
+  import {AppCraft} from "logic/lApplication";
+  const api = new AppCraft();
 
   export default {
     name: "Enter",
     data() {
       return {
-        login: '',
-        pass: ''
+        user: {
+          login: '123',
+          password: '123'
+        }
       }
     },
     methods: {
       loginEnter (login, pass) {
-        AppT.login();
+       api.login(this.user);
       }
     }
   }
@@ -50,7 +52,7 @@
 
 <style scoped lang="scss">
 
-  @import "./../../../../global";
+  @import "./../../../../style/global";
 
   .form-enter {
     position: absolute;

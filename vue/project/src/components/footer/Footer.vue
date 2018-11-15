@@ -40,7 +40,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../../global";
+  @import "../../style/global";
 
   .footer {
     padding-top: 70px;

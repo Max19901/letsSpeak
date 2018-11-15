@@ -63,7 +63,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "./../../../../global";
+  @import "../../../../style/global";
 
   .navigate {
     padding-top: 70px;

@@ -1,12 +1,17 @@
-//import HttpClient from "../httpclient"
+import axios from 'axios';
 
-
-export class lApplication {
-  constructor () {
-    console.log("created");
+export class AppCraft {
+  constructor(){
+    console.log('lala');
   }
-  login () {
-    console.log('Login');
+  login(user) {
+    axios.post('https://ng-http-64f39.firebaseio.com/data.json', user)
+      .then(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
+    console.log('pass:' + user);
   }
   isUserAuth () {
     console.log('ddsd user check auth');

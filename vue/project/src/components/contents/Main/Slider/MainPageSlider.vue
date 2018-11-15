@@ -57,7 +57,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../../../../global";
+  @import "../../../../style/global";
 
   .content {
     width: 100%;

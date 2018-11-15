@@ -63,7 +63,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import '../../../global';
+  @import '../../../style/global';
 
   .navigation {
     display: flex;

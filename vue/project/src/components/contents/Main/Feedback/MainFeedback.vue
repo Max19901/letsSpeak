@@ -50,7 +50,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../../../../global";
+  @import "../../../../style/global";
 
   .feedback {
     background-color: #f9f9f9;

@@ -26,7 +26,7 @@
 
 <style scoped lang="scss">
 
-  @import '../../../../global';
+  @import '../../../../style/global';
 
   .banner {
     background-image: url('../../../../assets/images/banner.jpg');
