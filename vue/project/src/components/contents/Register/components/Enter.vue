@@ -29,8 +29,8 @@
 </template>
 
 <script>
-  import {AppCraft} from "logic/lApplication";
-  const api = new AppCraft();
+  import { Applications }  from "logic/api";
+  const Api = new Applications();
 
   export default {
     name: "Enter",
@@ -44,7 +44,9 @@
     },
     methods: {
       loginEnter (login, pass) {
-       api.login(this.user);
+       Api.login().then(res => {
+         console.log(res);
+       })
       }
     }
   }

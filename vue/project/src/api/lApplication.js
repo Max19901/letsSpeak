@@ -15,7 +15,7 @@ export class AppCraft {
   }
   isUserAuth () {
     console.log('ddsd user check auth');
-    return false;
+    return true;
   }
 }
 

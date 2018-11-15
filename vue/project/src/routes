@@ -1,8 +1,8 @@
 import Home from './components/contents/Main/MainPage.vue';
 import Register from './components/contents/Register/Register.vue';
-import {lApplication} from "./logic/lApplication";
+import {AppCraft} from "./api/lApplication";
 
-const AppT = new lApplication();
+const AppT = new AppCraft();
 
 const guard = function(to, from, next) {
   console.log('route guard:', to, from);

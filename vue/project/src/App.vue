@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-      <app-header class="app_header"></app-header>
+    <app-header class="app_header"></app-header>
+    <transition name="fade"
+                appear
+                mode="out-in">
       <router-view></router-view>
-      <app-footer></app-footer>
+    </transition>
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -13,9 +17,7 @@
 
   export default {
     data() {
-      return {
-
-      }
+      return {}
     },
     components: {
       appHeader: Header,
@@ -26,10 +28,13 @@
 </script>
 
 <style lang="scss">
-  #app {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .75s;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
+  {
+    opacity: 0;
   }
 </style>

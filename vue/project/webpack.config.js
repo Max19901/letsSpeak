@@ -84,7 +84,7 @@ module.exports = {
       'src': path.resolve(__dirname, './src'),
       'assets': path.resolve(__dirname, './src/assets'),
       'components': path.resolve(__dirname, './src/components'),
-      'logic': path.resolve(__dirname, './src/logic')
+      'logic': path.resolve(__dirname, './src/api')
     }
   },
   devServer: {
