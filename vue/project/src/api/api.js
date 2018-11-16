@@ -8,6 +8,9 @@ export class Applications {
   login() {
    return service.GET();
   }
+  isUserActive() {
+    return true;
+  }
 }
 
 

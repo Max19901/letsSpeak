@@ -45,7 +45,9 @@
     methods: {
       loginEnter (login, pass) {
        Api.login().then(res => {
-         console.log(res);
+         if (res.data.mail) {
+           this.$router.push('/profile');
+         }
        })
       }
     }

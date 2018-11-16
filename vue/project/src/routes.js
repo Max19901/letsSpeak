@@ -1,13 +1,14 @@
 import Home from './components/contents/Main/MainPage.vue';
 import Register from './components/contents/Register/Register.vue';
-import {AppCraft} from "./api/lApplication";
+import Profile from 'components/profiles/ProfileMainPage.vue';
+import {Applications} from 'logic/api';
 
-const AppT = new AppCraft();
+const Api = new Applications();
 
 const guard = function(to, from, next) {
   console.log('route guard:', to, from);
   //if (to.name == "Register") {
-  if (!AppT.isUserAuth()) {
+  if (!Api.isUserActive()) {
     console.log("access denied");
     window.location.href = "/";
   } else {
@@ -23,5 +24,7 @@ export const routes = [
       guard(to, from, next);
      }
   },
+  {path: '/profile', component: Profile, name: 'Profile', meta: { scrollToTop: true }},
+  {path: '*', redirect: '/'}
 
 ];

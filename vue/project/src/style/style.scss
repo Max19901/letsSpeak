@@ -169,6 +169,7 @@ input {
   color: $white;
   transition: .4s;
   background-color: $red;
+  outline: none;
   &:after {
     content: '';
     position: absolute;

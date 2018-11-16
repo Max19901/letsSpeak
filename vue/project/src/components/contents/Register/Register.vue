@@ -1,22 +1,30 @@
 <template>
-  <div class="registration">
-    <div class="container">
-      <div class="title-block">
-        <h2>Регистрация и Вход</h2>
+  <div>
+    <app-header></app-header>
+    <div class="registration">
+      <div class="container">
+        <div class="title-block">
+          <h2>Регистрация и Вход</h2>
+        </div>
+        <app-form></app-form>
       </div>
-      <app-form></app-form>
     </div>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+  import Header from 'components/header/Header.vue';
   import RegisterForm from './components/RegisterForm.vue';
+  import Footer from 'components/footer/Footer.vue';
 
 
   export default {
     name: "Register",
     components: {
-      appForm: RegisterForm
+      appHeader: Header,
+      appForm: RegisterForm,
+      appFooter: Footer
     }
   }
 

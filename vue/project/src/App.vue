@@ -1,28 +1,22 @@
 <template>
   <div id="app">
-    <app-header class="app_header"></app-header>
     <transition name="fade"
                 appear
                 mode="out-in">
-      <router-view></router-view>
+      <app-content-page></app-content-page>
     </transition>
-    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-  import Header from './components/header/Header.vue';
-  import Main from './components/contents/Main/MainPage.vue';
-  import Footer from './components/footer/Footer.vue';
+  import ContentPage from 'components/ContentPage.vue';
 
   export default {
     data() {
       return {}
     },
     components: {
-      appHeader: Header,
-      appMain: Main,
-      appFooter: Footer
+      appContentPage: ContentPage
     }
   }
 </script>
