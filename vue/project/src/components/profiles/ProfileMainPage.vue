@@ -36,11 +36,11 @@
     flex-direction: row;
     .aside {
       height: 100%;
-      width: calc(100% - 80%);
+      width: 300px;
     }
     .content {
       height: 100%;
-      width: calc(100% - 20%);
+      width: calc(100% - 300px);
     }
   }
 </style>

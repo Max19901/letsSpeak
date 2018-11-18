@@ -36,5 +36,6 @@
     background: #fafafa;
     position: fixed;
     box-shadow: 0px 9px 28px 0px rgba(0, 0, 0, 0.26);
+    z-index: 3;
   }
 </style>

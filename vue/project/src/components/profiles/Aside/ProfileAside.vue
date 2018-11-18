@@ -1,21 +1,31 @@
 <template>
-    <div>
-      <div class="aside-wrap">
-        Aside
-      </div>
+  <div>
+    <div class="aside-wrap">
+      <app-aside-head></app-aside-head>
+      <app-aside-items></app-aside-items>
     </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "profile-aside"
+  import AsideHead from './ProfileAsideHead.vue';
+  import AsideItems from './ProfileAsideItems.vue';
+
+  export default {
+    name: "profile-aside",
+    components: {
+      appAsideHead: AsideHead,
+      appAsideItems: AsideItems
     }
+  }
 </script>
 
 <style scoped lang="scss">
+  @import "../../../style/global";
+
   .aside-wrap {
     height: 100vh;
-    border-right: 1px solid #333333;
-    padding: 0 15px;
+    background-color: $black;
   }
+
 </style>
