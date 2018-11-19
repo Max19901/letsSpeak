@@ -1,12 +1,13 @@
 import HttpService from './http-service';
 const service = new HttpService();
 
-export class Applications {
+export class Application {
   constructor() {
   }
 
-  login() {
-   return service.GET();
+  login(oUser) {
+    //return service.GET();
+    return service.GET();
   }
   isUserActive() {
     return true;

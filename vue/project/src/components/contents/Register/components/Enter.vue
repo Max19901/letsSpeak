@@ -19,7 +19,7 @@
                  placeholder="Пароль"
                  type="text">
         </div>
-        <button @click='loginEnter' class="button">Войти</button>
+        <button @click='onBtnLoginClick' class="button">Войти</button>
       </div>
       <div class="info-reset">
         <h3></h3>
@@ -29,8 +29,8 @@
 </template>
 
 <script>
-  import { Applications }  from "logic/api";
-  const Api = new Applications();
+  import { Application }  from "logic/Application";
+  const Api = new Application();
 
   export default {
     name: "Enter",
@@ -43,12 +43,15 @@
       }
     },
     methods: {
-      loginEnter (login, pass) {
-       Api.login().then(res => {
+      onBtnLoginClick () {
+       /*Api.login().then(res => {
          if (res.data.mail) {
            this.$router.push('/profile');
          }
-       })
+       })*/
+        Api.login(this.user).then(result => {
+          console.log(result);
+        });
       }
     }
   }

@@ -6,20 +6,22 @@ class HttpService {
     console.log('HTTP');
   }
 
-  GET() {
+  GET(sUrl, params) {
     return fetch({
-      url: 'https://ng-http-64f39.firebaseio.com/data.json',
+      //url: 'https://ng-http-64f39.firebaseio.com/data.json',
+      url: sUrl,
       method: 'get',
-      params: {}
+      params: params
     });
   }
 
-  POST(data) {
+  POST(sUrl, params) {
    return fetch({
-      url: 'https://ng-http-64f39.firebaseio.com/data.json',
+      //url: 'https://ng-http-64f39.firebaseio.com/data.json',
+      url: sUrl,
       method: 'post',
       params: {
-        data: data
+        data: params
       }
     });
   }

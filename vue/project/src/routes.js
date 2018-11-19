@@ -1,7 +1,7 @@
 import Home from './components/contents/Main/MainPage.vue';
 import Register from './components/contents/Register/Register.vue';
 import Profile from 'components/profiles/ProfileMainPage.vue';
-import {Applications} from 'logic/api';
+import {Applications} from 'logic/Application';
 
 const Api = new Applications();
 
